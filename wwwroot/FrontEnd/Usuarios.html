@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários - SoftLine</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/MenuStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container-menu d-flex">
+
+        <div class="menu-section">
+            <div class="menu-list">
+                <a href="Menu.html" class="menu-item">
+                    <span class="menu-icon">🏠</span>
+                    <span class="menu-text">Início</span>
+                </a>
+                <a href="Usuarios.html" class="menu-item active">
+                    <span class="menu-icon">👤</span>
+                    <span class="menu-text">Usuários</span>
+                </a>
+                <a href="Vendas.html" class="menu-item">
+                    <span class="menu-icon">💰</span>
+                    <span class="menu-text">Vendas</span>
+                </a>
+                <a href="cadastro.html" class="menu-item">
+                    <span class="menu-icon">📝</span>
+                    <span class="menu-text">Cadastrar</span>
+                </a>
+                <a href="lista-produtos.html" class="menu-item">
+                    <span class="menu-icon">📦</span>
+                    <span class="menu-text">Produtos</span>
+                </a>
+                <a href="lista-clientes.html" class="menu-item">
+                    <span class="menu-icon">👥</span>
+                    <span class="menu-text">Clientes</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex-grow-1">
+
+            <div class="user-info d-flex align-items-center justify-content-between p-3 border-bottom">
+                <h1 class="m-0 fs-1">Usuários</h1>
+
+                <div class="d-flex align-items-center">
+                    <span id="usuarioNome" class="me-3 fw-bold"></span>
+                    <span id="usuarioPerfil" class="text-muted"></span>
+                </div>
+            </div>
+
+            <div class="conteudo-principal p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+                    <button id="btnNovoUsuario" class="btn btn-primary">Novo Usuário</button>
+                </div>
+
+                <input type="text" id="pesquisaUsuarios" class="form-control mb-4" placeholder="Pesquisar usuários...">
+
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" id="tabelaUsuarios">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nome</th>
+                                    <th>Login</th>
+                                    <th>Perfil</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="usuarioModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="formUsuario">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Novo Usuário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nomeUsuario" class="form-label">Nome</label>
+                            <input type="text" id="nomeUsuario" class="form-control" maxlength="60" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginUsuario" class="form-label">Login</label>
+                            <input type="text" id="loginUsuario" class="form-control" maxlength="30" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senhaUsuario" class="form-label">Senha</label>
+                            <input type="password" id="senhaUsuario" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="perfilUsuario" class="form-label">Perfil</label>
+                            <select id="perfilUsuario" class="form-select">
+                                <option value="admin">Admin</option>
+                                <option value="vendedor">Vendedor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar Usuário</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/usuarios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
